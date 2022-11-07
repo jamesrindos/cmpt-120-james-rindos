@@ -1,0 +1,35 @@
+from asyncore import loop
+from multiprocessing import RLock
+
+
+def start():
+    import random
+    while True:
+        player_turn = input("Rock, Paper, Scissors...:")
+        choices = ["rock", "paper", "scissors"]
+        computer_turn = random.choice(choices)
+        print(f"\nSHOOT! You chose {player_turn}, the computer chose {computer_turn}\n")
+    
+        if player_turn == computer_turn:
+            print("It's a tie!")
+        elif player_turn == "rock":
+            if computer_turn == "scissors":
+                print("You Win!")
+            else:
+                print("You Lose!")
+        elif player_turn == "scissors":
+            if computer_turn == "paper":
+                print("You Win!")
+            else:
+                print("You Lose!")
+        elif player_turn == "paper":
+            if computer_turn == "rock":
+                print("You win!")
+            else:
+                print("You Lose!")
+        play_again = input("Play again? (y/n)")
+        if play_again != "y":
+            break
+    
+start()
+    
