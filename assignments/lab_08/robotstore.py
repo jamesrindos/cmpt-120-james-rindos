@@ -1,4 +1,10 @@
-product_names = [ "Ultrasonic range finger", "Servo motor", "Servo controller", "Microcontroller Board", "Laser range finder", "Lithium polymer battery" ]
+product_names = [ "Ultrasonic range finger",
+                 "Servo motor",
+                 "Servo controller",
+                 "Microcontroller Board",
+                 "Laser range finder",
+                 "Lithium polymer battery" ]
+
 product_prices = [ 2.50, 14.99, 44.95, 34.95, 149.99, 8.99 ]
 product_quantities = [ 4, 10, 5, 7, 2, 8 ]
 
@@ -30,4 +36,5 @@ def main():
                 print("Sorry, you cannot afford that product.")
         else:
             print("Sorry, we are sold out of", product_names[prod_id])
+            
 main()
