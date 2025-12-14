@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperlocal B-Roll Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Ambient background -->
+        <div class="ambient-bg"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 10L19.5528 7.72361C20.2177 7.39116 21 7.87465 21 8.61803V15.382C21 16.1253 20.2177 16.6088 19.5528 16.2764L15 14M5 18H13C14.1046 18 15 17.1046 15 16V8C15 6.89543 14.1046 6 13 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Hyperlocal</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active">Generate</a>
+                <a href="#" class="nav-link">Library</a>
+                <a href="#" class="nav-link">Settings</a>
+            </nav>
+        </header>
+
+        <!-- Main content -->
+        <main class="main-content">
+            <div class="hero-section">
+                <h1 class="hero-title">
+                    Create stunning<br>
+                    <span class="gradient-text">hyperlocal B-roll</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Transform any location into cinematic footage using AI-powered Street View capture,
+                    Nanobanana Pro enhancement, and Veo 3.1 video generation.
+                </p>
+            </div>
+
+            <!-- Input Form -->
+            <form id="generate-form" class="generate-form">
+                <div class="input-group">
+                    <label for="location" class="input-label">
+                        <svg viewBox="0 0 24 24" fill="none" class="input-icon">
+                            <path d="M17.657 16.657L13.414 20.9C13.039 21.275 12.53 21.485 12 21.485C11.47 21.485 10.961 21.275 10.586 20.9L6.343 16.657C3.219 13.533 3.219 8.467 6.343 5.343C9.467 2.219 14.533 2.219 17.657 5.343C20.781 8.467 20.781 13.533 17.657 16.657Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7C10.8954 7 10 7.89543 10 9C10 10.1046 10.8954 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Location
+                    </label>
+                    <input
+                        type="text"
+                        id="location"
+                        name="location"
+                        class="input-field"
+                        placeholder="Enter a city, town, or neighborhood..."
+                        required
+                    >
+                    <div class="input-hint">e.g., "Brooklyn, NY" or "Shibuya, Tokyo"</div>
+                </div>
+
+                <div class="input-group">
+                    <label for="creative-direction" class="input-label">
+                        <svg viewBox="0 0 24 24" fill="none" class="input-icon">
+                            <path d="M12 19L19 12L22 15L15 22L12 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 13L16.5 5.5L2 2L5.5 16.5L13 18L18 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 2L9.586 9.586" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        Creative Direction
+                    </label>
+                    <textarea
+                        id="creative-direction"
+                        name="creative_direction"
+                        class="input-field textarea"
+                        placeholder="Describe the style, mood, and types of shots you're looking for..."
+                        required
+                    ></textarea>
+                    <div class="input-hint">e.g., "Cinematic golden hour shots of cafes and street art, slow dolly movements, warm color grade"</div>
+                </div>
+
+                <!-- Quick presets -->
+                <div class="presets-section">
+                    <span class="presets-label">Quick presets:</span>
+                    <div class="presets-grid">
+                        <button type="button" class="preset-chip" data-preset="Urban lifestyle - trendy cafes, street fashion, neon signs, dynamic tracking shots">
+                            Urban Lifestyle
+                        </button>
+                        <button type="button" class="preset-chip" data-preset="Architectural beauty - historic buildings, modern structures, geometric compositions, slow reveals">
+                            Architecture
+                        </button>
+                        <button type="button" class="preset-chip" data-preset="Local culture - markets, street food, artisan shops, intimate close-ups with warm tones">
+                            Local Culture
+                        </button>
+                        <button type="button" class="preset-chip" data-preset="Nature in city - parks, gardens, waterfront, peaceful wide shots with natural lighting">
+                            Urban Nature
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="generate-button">
+                    <span class="button-text">Generate B-Roll</span>
+                    <svg viewBox="0 0 24 24" fill="none" class="button-icon">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Progress Section (hidden by default) -->
+            <div id="progress-section" class="progress-section hidden">
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <h3 class="progress-title">Generating your B-roll</h3>
+                        <span id="progress-percentage" class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p id="progress-message" class="progress-message">Initializing...</p>
+
+                    <div class="progress-steps">
+                        <div class="step" data-step="1">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span>Discover POIs</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                                    <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <span>Capture Images</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 3V21M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M12 8L8 12L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M12 8L16 12L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span>Enhance</span>
+                        </div>
+                        <div class="step" data-step="4">
+                            <div class="step-icon">
+                                <svg viewBox="0 0 24 24" fill="none">
+                                    <polygon points="5,3 19,12 5,21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <span>Generate Video</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section (hidden by default) -->
+            <div id="results-section" class="results-section hidden">
+                <div class="results-header">
+                    <h2 class="results-title">Your B-Roll Clips</h2>
+                    <button class="download-all-btn">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 3V15M12 15L7 10M12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download All
+                    </button>
+                </div>
+                <div id="clips-grid" class="clips-grid">
+                    <!-- Clips will be dynamically inserted here -->
+                </div>
+                <button id="generate-more" class="generate-more-btn">
+                    Generate More Clips
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by Google Maps Street View, Nanobanana Pro & Veo 3.1</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
